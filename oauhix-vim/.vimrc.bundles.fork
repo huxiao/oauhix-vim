@@ -1,0 +1,9 @@
+" Programming
+    Bundle 'huxiao/cscope.vim'
+    Bundle 'huxiao/cscope_macros'
+    Bundle 'vim-scripts/bufexplorer.zip'
+" Writing
+    Bundle 'vimwiki/vimwiki'
+    Bundle 'mattn/calendar-vim'
+" Browser
+    Bundle 'superbrothers/vim-vimperator'

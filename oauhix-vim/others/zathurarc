@@ -1,0 +1,5 @@
+map D toggle_page_mode
+map e scroll half-up
+map d scroll half-down
+
+" vim: ft=vim

@@ -1,0 +1,87 @@
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Set standard encoding and the standard language
+set fileencodings=utf-8,cp936,ucs-bom,default,lation1
+
+" Use Unix as the standard file type
+set fileformats=unix,dos,mac
+
+" Unprintable characters setting, but disable listchars
+set listchars=tab:,.,extends:>,precedes:<,nbsp:.
+set nolist
+
+" Temporarily so, in order to prevent spell-checking of non-syntax files
+set nospell
+
+" Disable the use of mouse
+set mouse=""
+
+" Don't highlight current line
+set nocursorline                  
+
+" Use for the background
+set background=dark
+
+" Set the background color of the LineNumber sidebar
+highlight LineNr ctermbg=None
+
+" Open CtrlP in find buffer mode.
+nnoremap <leader>p :CtrlPBuffer<CR>
+
+" NerdTree {
+    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\CVS']
+" }
+
+" vim-indent-guides {
+    let g:indent_guides_enable_on_vim_startup = 0
+" }
+
+" ctrlp {
+    let g:ctrlp_working_path_mode = 'ra'
+"}
+
+" Set gvim appearance in windows {
+if has('win32') || has('win64')
+    set guioptions-=r
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.utf-8
+    "au GUIEnter * simalt ~x
+    set lines=40 columns=150
+    winpos 360 255
+    map <f11> :call WindowSizeToggle()<CR>
+
+    function! WindowSizeToggle()
+        let s:winstatus = libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
+        if s:winstatus == 0
+            set lines=40 columns=150
+            winpos 360 255
+        endif
+
+    endfunction
+
+endif
+"}
+
+" 自定义命令Show2Tab，用于将vim中的命令输出信息显示到tabnew中
+command! -nargs=1 -complete=command Show2Tab redir @* | silent <args> | redir END | tabnew | put *
+
+" 热键[,wc]，用于vimwiki中，修改当前行为一级标题加分割线
+" 支持当前行的形式为：? [[TITLE]] 或 #/* TITLE 或 TITLE
+nn <leader>wc :s/.*\[\[\\|[#,*] *\\|^//g<CR>:s/\]\].*\\| *$//g<CR>:nohlsearch<CR>0i= <Esc>$a =<CR>----<CR><CR>
+
+" 设置窗口切换快捷键
+if exists('g:spf13_no_easyWindows')
+    map <Leader>wj <C-W>j<C-W>_
+    map <Leader>wk <C-W>k<C-W>_
+    map <Leader>wl <C-W>l<C-W>_
+    map <Leader>wh <C-W>h<C-W>_
+    map <C-J> <C-W>j
+    map <C-K> <C-W>k
+    map <C-L> <C-W>l
+    map <C-H> <C-W>h
+endif
+
+" 为cscope设置cscope.out所在路径为前缀构造绝对路径
+set cscoperelative
