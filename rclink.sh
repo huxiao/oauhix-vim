@@ -21,7 +21,7 @@ lnif "$oauhiinst/.vimrc.bundles.fork"      "$HOME/.vimrc.bundles.fork"
 lnif "$oauhiinst/.gvimrc"                  "$HOME/.gvimrc"
 
 rm -rf "$HOME/.config/.vifm"
-mkdir -p "~/.config/zathura"
+mkdir -p "$HOME/.config/zathura"
 
 lnif "$oauhiinst/others/vifm"               "$HOME/.vifm"
 lnif "$oauhiinst/others/zathura"            "$HOME/.config/zathura"
