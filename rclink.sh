@@ -15,17 +15,16 @@ lnif "$spf13inst/.vimrc.before"             "$HOME/.vimrc.before"
 lnif "$spf13inst/.vimrc.bundles"            "$HOME/.vimrc.bundles"
 lnif "$spf13inst/.vim"                      "$HOME/.vim"
 
-lnif "$oauhiinst/.vimrc.fork"              "$HOME/.vimrc.fork"
-lnif "$oauhiinst/.vimrc.before.fork"       "$HOME/.vimrc.before.fork"
-lnif "$oauhiinst/.vimrc.bundles.fork"      "$HOME/.vimrc.bundles.fork"
-lnif "$oauhiinst/.gvimrc"                  "$HOME/.gvimrc"
+lnif "$oauhiinst/.vimrc.fork"               "$HOME/.vimrc.fork"
+lnif "$oauhiinst/.vimrc.before.fork"        "$HOME/.vimrc.before.fork"
+lnif "$oauhiinst/.vimrc.bundles.fork"       "$HOME/.vimrc.bundles.fork"
+lnif "$oauhiinst/.gvimrc"                   "$HOME/.gvimrc"
 
 rm -rf "$HOME/.config/.vifm"
 mkdir -p "$HOME/.config/zathura"
 
 lnif "$oauhiinst/others/vifm"               "$HOME/.vifm"
-lnif "$oauhiinst/others/zathura"            "$HOME/.config/zathura"
-lnif "$oauhiinst/others/vifm"               "$HOME/.vifm"
+lnif "$oauhiinst/others/zathurarc"          "$HOME/.config/zathura/zathurarc"
 
 # Useful for fork maintainers
 touch  "$HOME/.vimrc.local"
