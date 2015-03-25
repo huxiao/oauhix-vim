@@ -115,8 +115,15 @@ uz() {
     unzip -O GBK  $1
 }
 
-ocdd()
-{
+#双向增量备份文件夹，待完善参数判定和说明
+#使用方法: isync dir1 dir2
+#不要求两文件后是否有'/'
+isync() {
+    rsync -r $1/ $2/
+    rsync -r $2/ $1/
+}
+
+ocdd() {
     killall openocd > /dev/null 2>&1
     ocd > /dev/null 2>&1 &
     sleep 1 && ocdcmd
