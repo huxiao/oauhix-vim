@@ -48,10 +48,13 @@ ZSH_THEME="robbyrussell"
 plugins=(git autojump)
 
 # User configuration
+ZSHRC_BEFORE_LOCAL="$HOME/.zshrc.before.local"
+ZSHRC_FINAL_LOCAL="$HOME/.zshrc.final.local"
 
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+[ -f "$ZSHRC_BEFORE_LOCAL" ] && source "$ZSHRC_BEFORE_LOCAL"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -128,3 +131,5 @@ ocdd() {
     ocd > /dev/null 2>&1 &
     sleep 1 && ocdcmd
 }
+
+[ -f "$ZSHRC_FINAL_LOCAL" ] && source "$ZSHRC_FINAL_LOCAL"
