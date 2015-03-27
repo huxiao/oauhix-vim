@@ -25,3 +25,4 @@ let g:vimwiki_list = [wiki_1, wiki_2]
 
 autocmd FileType vimwiki setlocal wrap
 
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
