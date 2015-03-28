@@ -7,3 +7,11 @@
     Bundle 'mattn/calendar-vim'
 " Browser
     Bundle 'superbrothers/vim-vimperator'
+
+" UnBundle命令由.vimrc.bundles提供，调用vundle接口包装而成。该代码漏掉了g:bundles的定义，暂替补之。
+if !exists("g:bundles")
+    let g:bundles = g:vundle#bundles
+endif
+
+"UnBundles
+    "UnBundle 'foo/bar'

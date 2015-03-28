@@ -25,4 +25,10 @@ let g:vimwiki_list = [wiki_1, wiki_2]
 
 autocmd FileType vimwiki setlocal wrap
 
-let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+"let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+if $MYCOMPLETE == 'youcompleteme'
+    let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'misc',]
+else
+    let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'python', 'misc',]
+endif
+
