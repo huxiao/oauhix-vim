@@ -135,4 +135,15 @@ ocdd() {
     sleep 1 && ocdcmd
 }
 
+mkst(){
+    if [ $# -ne 1 ]; then
+        echo "USage: $0 <prjname>"
+        return 1
+    fi
+
+    mkdir -p $1
+    git archive --remote ~/Nutstore/myrepo/sttmp.git master | tar xC $1
+
+}
+
 [ -f "$ZSHRC_FINAL_LOCAL" ] && source "$ZSHRC_FINAL_LOCAL"
