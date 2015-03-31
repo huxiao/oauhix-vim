@@ -125,8 +125,27 @@ uz() {
 #使用方法: isync dir1 dir2
 #不要求两文件后是否有'/'
 isync() {
-    rsync -r $1/ $2/
-    rsync -r $2/ $1/
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 dir1 dir2"
+        echo "Synchronize: dir1 <=> dir2"
+        return 1
+    fi
+
+    rsync -r --size-only $1/ $2/
+    rsync -r --size-only $1/ $1/
+}
+
+vsync(){
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 dir1 dir2"
+        echo "Preview synchronize: dir1 <=> dir2"
+        return 1
+    fi
+
+    echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    rsync -rvn --size-only $1/ $2/
+    echo "\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+    rsync -rvn --size-only $2/ $1/
 }
 
 ocdd() {
@@ -137,7 +156,7 @@ ocdd() {
 
 mkst(){
     if [ $# -ne 1 ]; then
-        echo "USage: $0 <prjname>"
+        echo "Usage: $0 <prjname>"
         return 1
     fi
 
