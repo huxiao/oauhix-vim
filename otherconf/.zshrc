@@ -89,8 +89,6 @@ export LANG=en_US.UTF-8
 zstyle ':completion::complete:*' use-cache 1
 
 alias off='systemctl poweroff'
-alias 11='sshpass -p simbax ssh root@127.0.0.1'
-alias 22='sshpass -p gentoo11 ssh root@172.16.0.1'
 alias 00='asdbg ~/.config/awesome/rc.lua.oauhix'
 alias sc='systemctl'
 alias es='eselect'

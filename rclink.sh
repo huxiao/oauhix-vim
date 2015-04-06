@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ovroot="$HOME/.oauhix-vim"
+ovroot="$HOME/oauhix-vim"
 vimcustom="$ovroot/oauhix-vim"
 spf13inst="$HOME/.spf13-vim-3"
 
@@ -10,6 +10,9 @@ lnif() {
     fi
     ret="$?"
 }
+
+rm -rf "$spf13inst"
+ln -sf "$HOME/oauhix-vim/spf13-vim" "$spf13inst"
 
 lnif "$spf13inst/.vimrc"                    "$HOME/.vimrc"
 lnif "$spf13inst/.vimrc.before"             "$HOME/.vimrc.before"
@@ -21,14 +24,12 @@ lnif "$vimcustom/.vimrc.before.fork"        "$HOME/.vimrc.before.fork"
 lnif "$vimcustom/.vimrc.bundles.fork"       "$HOME/.vimrc.bundles.fork"
 lnif "$vimcustom/.gvimrc"                   "$HOME/.gvimrc"
 
-rm -rf "$HOME/.config/.vifm"
-mkdir -p "$HOME/.config/zathura"
-
-lnif "$vimcustom/others/vifm"               "$HOME/.vifm"
-lnif "$vimcustom/others/zathurarc"          "$HOME/.config/zathura/zathurarc"
-
-lnif "$ovroot/otherconf/.vimperatorrc"      "$HOME/.vimperatorrc"
+rm -rf "$HOME/.vifm"
+lnif "$ovroot/otherconf/.vifm"              "$HOME/.vifm"
 lnif "$ovroot/otherconf/.zshrc"             "$HOME/.zshrc"
+lnif "$ovroot/otherconf/.vimperatorrc"      "$HOME/.vimperatorrc"
+mkdir -p "$HOME/.config/zathura"
+lnif "$ovroot/otherconf/zathurarc"          "$HOME/.config/zathura/zathurarc"
 
 # Useful for fork maintainers
 touch  "$HOME/.vimrc.local"
@@ -36,6 +37,3 @@ touch  "$HOME/.gvimrc.local"
 touch  "$HOME/.vimrc.before.local"
 touch  "$HOME/.vimrc.bundles.local"
 
-if [[ ! -e "$spf13inst" ]]; then
-    ln -s "$HOME/.oauhix-vim/spf13-vim" "$spf13inst"
-fi
