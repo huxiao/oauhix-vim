@@ -114,6 +114,23 @@ export LS_COLORS
 #PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
 
+#为vimwiki抓图
+zt() {
+    echo -n 'Please capture picture  using mouse...' 
+    picfile=`scrot -s -q 100 -e 'echo $f'`
+    echo "done."
+    sxiv $picfile >/dev/null 2>&1
+    echo -n 'Are you sure use this picture? [y|n]' 
+    read affirm
+    if [ $affirm = "y" ]; then
+        mv $picfile ~/Nutstore/vimwiki/html/images/
+        echo "{{local:html/images/$picfile}}"
+    else
+        rm $picfile
+        return 0
+    fi
+}
+
 #之所以写为函数是因为alias uz=‘unzip -O GBK'不能TAB补全文件名，不知为何？
 uz() {
     unzip -O GBK  $1
