@@ -84,7 +84,7 @@ if exists('g:spf13_no_easyWindows')
 endif
 
 " 为cscope设置cscope.out所在路径为前缀构造绝对路径
-set cscoperelative
+"set cscoperelative
 
 " 不询问，直接装载.ycm_extra_conf.py
 let g:ycm_confirm_extra_conf= 0
