@@ -116,7 +116,7 @@ PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blu
 
 #为vimwiki抓图
 zt() {
-    echo -n 'Please capture picture  using mouse...' 
+    echo -n 'Please capture picture using mouse...' 
     picfile=`scrot -s -q 100 -e 'echo $f'`
     echo "done."
     sxiv $picfile >/dev/null 2>&1
