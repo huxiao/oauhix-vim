@@ -1,5 +1,9 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/usr/share/oh-my-zsh
+ZSHRC_BEFORE_LOCAL="$HOME/.zshrc.before.local"
+ZSHRC_FINAL_LOCAL="$HOME/.zshrc.final.local"
+
+[ -f "$ZSHRC_BEFORE_LOCAL" ] && source "$ZSHRC_BEFORE_LOCAL"
+# Default Path to oh-my-zsh installation.
+[ -z "$ZSH" ] && export ZSH="/usr/share/oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -48,13 +52,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git autojump)
 
 # User configuration
-ZSHRC_BEFORE_LOCAL="$HOME/.zshrc.before.local"
-ZSHRC_FINAL_LOCAL="$HOME/.zshrc.final.local"
-
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-[ -f "$ZSHRC_BEFORE_LOCAL" ] && source "$ZSHRC_BEFORE_LOCAL"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
