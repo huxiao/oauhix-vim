@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ovroot="$HOME/oauhix-vim"
+ovroot="$HOME/.oauhix-vim"
 vimcustom="$ovroot/oauhix-vim"
 spf13inst="$HOME/.spf13-vim-3"
 
@@ -12,7 +12,7 @@ lnif() {
 }
 
 rm -rf "$spf13inst"
-ln -sf "$HOME/oauhix-vim/spf13-vim" "$spf13inst"
+ln -sf "$ovroot/spf13-vim" "$spf13inst"
 
 lnif "$spf13inst/.vimrc"                    "$HOME/.vimrc"
 lnif "$spf13inst/.vimrc.before"             "$HOME/.vimrc.before"
