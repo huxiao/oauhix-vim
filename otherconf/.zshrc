@@ -87,6 +87,7 @@ export LANG=en_US.UTF-8
 #promptinit; prompt gentoo
 
 zstyle ':completion::complete:*' use-cache 1
+setopt extendedglob
 
 alias off='systemctl poweroff'
 alias 00='asdbg ~/.config/awesome/rc.lua.oauhix'
