@@ -39,7 +39,7 @@ map ,dd :!rm -rf %f
 map ,mv :!mv %f %D &<CR>
 
 " 显示进度的复制文件到另一侧
-map ,cp :!xfce4-terminal -e "rsync --progress %f %D"<CR>
+map ,cp :!xfce4-terminal -e "rsync -r --progress %f %D"<CR>
 
 " 在当前目录下打开终端
 map <A-l> :!xfce4-terminal --working-directory=%d<CR>
