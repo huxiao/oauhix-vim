@@ -88,3 +88,25 @@ endif
 
 " 不询问，直接装载.ycm_extra_conf.py
 let g:ycm_confirm_extra_conf= 0
+
+" vimwiki配置
+let wiki_1 = {}
+let wiki_1.path = '~/Dropbox/vimwiki/'
+let wiki_1.path_html = '~/.vimwiki/html/'
+let wiki_1.template_path = '~/Dropbox/vimwiki/template/'
+let wiki_1.template_default = 'default_template'
+let wiki_1.template_ext = '.html'
+let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+
+let wiki_2 = {}
+let wiki_2.path = '~/Dropbox/vimmkd/'
+let wiki_2.path_html = '~/.vimwiki/html/'
+let wiki_2.syntax = 'markdown'
+let wiki_2.ext = '.md'
+let wiki_2.template_path = '~/Dropbox/vimmkd/template/'
+let wiki_2.template_default = 'default_template'
+let wiki_2.template_ext = '.html'
+let wiki_2.custom_wiki2html = '~/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh'
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+autocmd FileType vimwiki setlocal wrap

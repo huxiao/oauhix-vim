@@ -1,30 +1,6 @@
 " Close spf13-vim default config - Easier moving in tabs and windows
 let g:spf13_no_easyWindows = 1
 
-" vimwiki配置
-
-let wiki_1 = {}
-let wiki_1.path = '~/Nutstore/vimwiki/'
-let wiki_1.path_html = '~/Nutstore/vimwiki/html/'
-let wiki_1.template_path = '~/Nutstore/vimwiki/template/'
-let wiki_1.template_default = 'default_template'
-let wiki_1.template_ext = '.html'
-let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
-
-let wiki_2 = {}
-let wiki_2.path = '~/Nutstore/vimmkd/'
-let wiki_2.path_html = '~/Nutstore/vimmkd/html/'
-let wiki_2.syntax = 'markdown'
-let wiki_2.ext = '.md'
-let wiki_2.template_path = '~/Nutstore/vimmkd/template/'
-let wiki_2.template_default = 'default_template'
-let wiki_2.template_ext = '.html'
-let wiki_2.custom_wiki2html = '/home/huxiao/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh'
-
-let g:vimwiki_list = [wiki_1, wiki_2]
-
-autocmd FileType vimwiki setlocal wrap
-
 "let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
 if $MYCOMPLETE == 'youcompleteme'
     let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'misc',]
