@@ -125,7 +125,7 @@ zt() {
     echo -n 'Are you sure use this picture? [y|n]' 
     read affirm
     if [ $affirm = "y" ]; then
-        mv $picfile ~/Nutstore/vimwiki/html/images/
+        mv $picfile ~/Dropbox/vimwiki/html/images/
         echo "{{local:html/images/$picfile}}"
     else
         rm $picfile

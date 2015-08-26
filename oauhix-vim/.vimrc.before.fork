@@ -4,19 +4,19 @@ let g:spf13_no_easyWindows = 1
 " vimwiki配置
 
 let wiki_1 = {}
-let wiki_1.path = '~/Nutstore/vimwiki/'
-let wiki_1.path_html = '~/Nutstore/vimwiki/html/'
-let wiki_1.template_path = '~/Nutstore/vimwiki/template/'
+let wiki_1.path = '~/Dropbox/vimwiki/'
+let wiki_1.path_html = '~/.vimwiki/html/'
+let wiki_1.template_path = '~/Dropbox/vimwiki/template/'
 let wiki_1.template_default = 'default_template'
 let wiki_1.template_ext = '.html'
 let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
 let wiki_2 = {}
-let wiki_2.path = '~/Nutstore/vimmkd/'
-let wiki_2.path_html = '~/Nutstore/vimmkd/html/'
+let wiki_2.path = '~/Dropbox/vimmkd/'
+let wiki_2.path_html = '~/Dropbox/vimmkd/html/'
 let wiki_2.syntax = 'markdown'
 let wiki_2.ext = '.md'
-let wiki_2.template_path = '~/Nutstore/vimmkd/template/'
+let wiki_2.template_path = '~/Dropbox/vimmkd/template/'
 let wiki_2.template_default = 'default_template'
 let wiki_2.template_ext = '.html'
 let wiki_2.custom_wiki2html = '/home/huxiao/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh'
