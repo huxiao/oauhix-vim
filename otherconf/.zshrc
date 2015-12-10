@@ -112,9 +112,11 @@ alias telocd='telnet localhost 4444'
 alias cmocd='ocd /usr/share/openocd/scripts/interface/cmsis-dap.cfg /usr/share/openocd/scripts/board/stm3210e_eval.cfg'
 alias adb='arm-none-eabi-gdb -x gdbscript'
 alias mkcs='find `pwd` -name "*.c" -o -name "*.h" > cscope.files && cscope -Rbq'
-alias wk='vim -c VimwikiIndex'
-alias dr='vim -c VimwikiMakeDiaryNote'
+alias wk='vi -c VimwikiIndex'
+alias dr='vi -c VimwikiMakeDiaryNote'
 alias f='locate'
+alias aon='go-mtpfs ~/s5'
+alias aoff='fusermount -u ~/s5'
 
 #为vimwiki抓图
 zt() {

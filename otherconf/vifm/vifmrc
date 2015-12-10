@@ -44,5 +44,7 @@ map ,cp :!xfce4-terminal -e "rsync -r --progress %f %D"<CR>
 " 在当前目录下打开终端
 map <A-l> :!xfce4-terminal --working-directory=%d<CR>
 
+" q键快捷推出，以配合终端下快捷v键进入
+map q :q<CR>
 
 " vim:ft=vim
