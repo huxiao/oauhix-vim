@@ -115,6 +115,7 @@ alias mkcs='find `pwd` -name "*.c" -o -name "*.h" > cscope.files && cscope -Rbq'
 alias wk='vi -c VimwikiIndex'
 alias dr='vi -c VimwikiMakeDiaryNote'
 alias f='locate'
+alias v='vifm .'
 alias aon='go-mtpfs ~/s5'
 alias aoff='fusermount -u ~/s5'
 
