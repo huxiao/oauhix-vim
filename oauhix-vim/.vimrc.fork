@@ -67,6 +67,10 @@ endif
 " 自定义命令Show2Tab，用于将vim中的命令输出信息显示到tabnew中
 command! -nargs=1 -complete=command Show2Tab redir @* | silent <args> | redir END | tabnew | put *
 
+" 设置vimwiki
+" 设置vimwiki文档的折叠
+let g:vimwiki_folding='expr'
+
 " 热键[,wc]，用于vimwiki中，修改当前行为一级标题加分割线
 " 支持当前行的形式为：? [[TITLE]] 或 #/* TITLE 或 TITLE
 nn <leader>wc :s/.*\[\[\\|[#,*] *\\|^//g<CR>:s/\]\].*\\| *$//g<CR>:nohlsearch<CR>0i= <Esc>$a =<CR>----<CR><CR>
