@@ -2,9 +2,11 @@
     Bundle 'huxiao/cscope.vim'
     Bundle 'huxiao/cscope_macros'
     Bundle 'vim-scripts/bufexplorer.zip'
-" Writing
+" Editing
     Bundle 'vimwiki/vimwiki'
     Bundle 'mattn/calendar-vim'
+    Bundle 'lervag/vimtex'
+    Bundle 'lfv89/vim-interestingwords'
 " Browser
     Bundle 'superbrothers/vim-vimperator'
 " fcitx input
