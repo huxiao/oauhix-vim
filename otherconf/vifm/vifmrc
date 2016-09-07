@@ -2,7 +2,7 @@
 " vifm特定的文件类型缺省打开程序，为那些没有.desktop的程序提供方便
 " 若是不使用其它文件管理器，都在这儿加倒是清晰方便
 filetype *.jpg,*.jpeg,*.png sxiv %f 2>/dev/null &
-filetype *.rmvb,*.rm,*.flv,*.mkv baka-mplayer %f 2>/dev/null &
+filetype *.rmvb,*.rm,*.flv,*.mkv,*.mp4 baka-mplayer %f 2>/dev/null &
 filetype *.pdf zathura %f 2>/dev/null &
 filetype *.mm freemind %f:p 2>/dev/null &
 

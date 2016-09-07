@@ -1,5 +1,10 @@
-" Close spf13-vim default config - Easier moving in tabs and windows
+" 配置窗口自动最大化功能快捷键：不使用默认键，在.vimrc.fork中定义新键
 let g:spf13_no_easyWindows = 1
+" 关闭当前目录自动切换功能
+let g:spf13_no_autochdir = 1
+let g:ctrlp_working_path_mode = 0
+" 配置aireline使用unicode字体符号
+let g:airline_powerline_fonts=1
 
 " vimwiki配置
 
