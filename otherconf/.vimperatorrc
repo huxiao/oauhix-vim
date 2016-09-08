@@ -41,6 +41,7 @@ silent qmark p https://plus.google.com
 silent qmark z http://www.zhihu.com
 silent qmark t http://translate.google.cn/#en/zh-CN/
 silent qmark i http://buyer.trade.taobao.com/trade/itemlist/list_bought_items.htm
+silent qmark d https://www.dida365.com/#q/all/today
 
 
 
