@@ -24,7 +24,7 @@ noremap <leader>gl :set gui=navigation<CR>
 noremap <leader>ss :source ~/.vimperatorrc<CR>
 
 "设置链接选定键
-set hintchars=asdfgqwertzxcvb12345
+set hintchars=asdfgqwertzxcvb
 
 "设置上下一页的正则模式
 set nextpattern=\\s*下一页\\s*,\\s*下一章\\s*,^翻下页$,^下页$,\bnext\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\bmore\b
@@ -44,6 +44,7 @@ silent qmark i http://buyer.trade.taobao.com/trade/itemlist/list_bought_items.ht
 silent qmark d https://www.dida365.com/#q/all/today
 
 
+noremap <leader>tabs :tabopen ~/docs/abs-3.9.1_cn/html/index.html<CR>
 
 source! /home/huxiao/.vimperatorrc.local
 
