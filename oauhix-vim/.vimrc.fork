@@ -3,9 +3,15 @@ nmap <leader>w :w!<cr>
 
 nnoremap <F5> <ESC>:let b:tmplangtime=v:lc_time<CR>:language time zh_CN.utf8<CR>"=strftime("%x %A")<CR>gP:execute "language time ".b:tmplangtime<CR>o<CR>
 nnoremap ,,d  :let b:tmplangtime=v:lc_time<CR>:language time zh_CN.utf8<CR>"=strftime("%x %A")<CR>gP:execute "language time ".b:tmplangtime<CR>o<CR>
-nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>df :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>da :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Set ycm navigation
+nnoremap <leader>fj :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>fk :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>fm :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Temporary solution
+nnoremap <leader>ll :echo expand('%:p')<CR>
+
 " Set standard encoding and the standard language
 set fileencodings=utf-8,cp936,ucs-bom,default,lation1
 
@@ -74,8 +80,6 @@ endif
 let g:spf13_no_fastTabs = 1
 map <S-H> :bp<CR>
 map <S-L> :bn<CR>
-map <S-J> gT
-map <S-K> gt
 
 " 自定义命令Show2Tab，用于将vim中的命令输出信息显示到tabnew中
 command! -nargs=1 -complete=command Show2Tab redir @* | silent <args> | redir END | tabnew | put *
@@ -168,8 +172,10 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline_symbols.maxlinenr = ""
 "let g:airline_symbols.linenr = ""
 endif
+
 " tagbar configuration
 "-----------------------
+" Support Vimwiki filetype
 let g:tagbar_type_vimwiki = {
     \   'ctagstype':'vimwiki'
     \ , 'kinds':['h:header']
@@ -178,6 +184,21 @@ let g:tagbar_type_vimwiki = {
     \ , 'sort':0
     \ , 'ctagsbin':'~/.oauhix-vim/oauhix-vim/others/vwtags.py'
     \ , 'ctagsargs': 'default'
+\ }
+" Support Markdown filetype
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '~/.oauhix-vim/modules/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
 \ }
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'  
