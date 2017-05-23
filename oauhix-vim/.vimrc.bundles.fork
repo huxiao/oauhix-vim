@@ -1,5 +1,5 @@
 " Programming
-    Bundle 'huxiao/cscope.vim'
+    Bundle 'brookhong/cscope.vim'
     Bundle 'huxiao/cscope_macros'
     Bundle 'vim-scripts/bufexplorer.zip'
     Bundle 'rdnetto/YCM-Generator'
