@@ -93,7 +93,8 @@ LS_COLORS='no=00;38;5;244:rs=0:di=00;38;5;33:ln=00;38;5;37:mh=00:pi=48;5;230;38;
 export LS_COLORS
 
 #PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
+#PROMPT='(((SHLVL>3))&&echo $SHLVL) %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
+#PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
 
 alias off='systemctl poweroff'
 alias 00='asdbg ~/.config/awesome/rc.lua.oauhix'
@@ -201,5 +202,20 @@ mkst(){
     git archive --remote ~/Nutstore/myrepo/sttmp.git master | tar xC $1
 
 }
+
+mkdot(){
+    if [ $# -eq 0 ]; then
+        echo "Usage: mkdot FILE ... [FILE] ..."
+        return 1
+    fi
+    for df  in $*; do
+        echo $dp
+        dot -Tpng $df -o $(basename $df .dot).png
+        sxiv $(basename $df .dot).png
+    done
+
+    return 0
+}
+
 
 [ -f "$ZSHRC_FINAL_LOCAL" ] && source "$ZSHRC_FINAL_LOCAL"
